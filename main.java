@@ -1,13 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
 
+import BuscaPalabra.Jugador;
+import BuscaPalabra.Tablero;
+
 public class main {
 
 	public static void main (String[] args) {
 
 		Tablero tablero = new Tablero();
         tablero.imprimir();
-        Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador();
         boolean ganador = false;
 
         for (int i = 1; i <= tablero.getCantidadElementos() * 2; i++) {

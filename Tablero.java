@@ -1,13 +1,44 @@
 package BuscaPalabra;
 
+import java.util.Scanner;
+
+import javax.annotation.processing.SupportedOptions;
+
 public class Tablero {
 
+    //Se modifica el array de adivinar palabra, para que sea un arreglo de varias dimensiones según el nivel que el usuario digite
     private String[] palabraAAdivinar = {"P", "A", "R", "A", "D", "I", "G", "M", "A", "S"};
     private String[] palabraAdivinada;
+    private String[][][] palabras = {
+            {"luna", "serpiente", "sol", "dia", "pato"}, 
+            {"locomotora", "escalera", "dinosaurio", "bicicleta", "estrella"}, 
+            {"electroencefalografista", "esternocleidomastoideo", "otorrinolaringolo", "paralelepipedo"},
+    };
 
     public Tablero() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Selecciona el nivel que deseas realizar del 1 a 3");
+        int nivel = entrada.nextInt();
+        nivel(nivel);
         palabraAdivinada = new String[palabraAAdivinar.length];
         limpiar();
+    }
+
+    public String nivel(int nivel){
+        switch(nivel){
+            case 1:
+                System.out.println("Escogio el nivel 1");
+                break;
+            case 2: 
+                System.out.println("Escogio el nivel 2");
+                break;
+            case 3:
+                System.out.println("Escogio el nivel 3");
+                break;
+            default:
+                System.out.println("Opcion no valida");
+                break;
+        }
     }
 
     public void limpiar() {
